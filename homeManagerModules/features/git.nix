@@ -4,7 +4,7 @@
   lib,
   ... 
 }: let
-  cfg = config.git;
+  cfg = config.myNixOS;
 in {
 
   options.git = {
@@ -30,11 +30,11 @@ in {
 
     programs.git = {
       enable = true;
-      userName = ${cfg.username};
-      userEmail = ${cfg..email};
+      userName = cfg.username;
+      userEmail = cfg..email;
       extraConfig = {
         init.defaultBranch = "main";
-        safe.directory = "/home/" + ${cfg.username} + "/.dotfiles";
+        safe.directory = "/home/" + cfg.username + "/.dotfiles";
       };
     };
 
