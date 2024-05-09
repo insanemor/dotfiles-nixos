@@ -1,5 +1,9 @@
-{ config, pkgs, ... 
-
+{ 
+  config, 
+  pkgs,
+  lib,
+  myLib,
+  ... 
 }: let
   cfg = config.myNixOS;
 in {
