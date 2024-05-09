@@ -19,7 +19,7 @@
   # Adiciona todas as features do home-manager
   myHomeManager = {    
     taskfile.enable = lib.mkDefault true;
-    #git.enable = lib.mkDefault true;
+    git.enable = lib.mkDefault true;
   };
 
 
