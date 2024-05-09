@@ -11,11 +11,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dconf-insanemor = {
-      url = "github:insanemor/dotifiles-nixos";
-    };
-
-
   };
 
 
