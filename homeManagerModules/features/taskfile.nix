@@ -11,7 +11,7 @@
       hello:
         silent: true
         cmds:
-          - echo "Hello from the remote Taskfile!"
+          - echo "Hello from the remote Taskfile as new repo!"
   '';
 
 
