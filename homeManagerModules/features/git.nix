@@ -2,10 +2,9 @@
   config, 
   pkgs,
   lib,
-  myLib,
   ... 
 }: let
-  cfg = config.git-user;
+  cfg = config.git;
 in {
 
   options.git = {
