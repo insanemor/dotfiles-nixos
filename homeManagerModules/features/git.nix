@@ -4,10 +4,10 @@
   lib,
   ... 
 }: let
-  cfg = config.myNixOS;
+  cfg = config.myHomeManager;
 in {
 
-  options.myNixOS.git = {
+  options.myHomeManager.git = {
       enable = lib.mkEnableOption "Configuracao do Git Config";
       
       username = lib.mkOption {
