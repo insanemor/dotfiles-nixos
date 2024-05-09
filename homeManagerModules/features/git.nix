@@ -28,6 +28,7 @@ in {
 
     home.packages = [ pkgs.git ];
 
+
     programs.git = {
       enable = true;
       userName = cfg.username;
