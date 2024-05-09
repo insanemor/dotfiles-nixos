@@ -31,7 +31,7 @@ in {
     programs.git = {
       enable = true;
       userName = cfg.username;
-      userEmail = cfg..email;
+      userEmail = cfg.email;
       extraConfig = {
         init.defaultBranch = "main";
         safe.directory = "/home/" + cfg.username + "/.dotfiles";
