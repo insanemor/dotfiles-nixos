@@ -37,11 +37,11 @@ in {
 
     programs.git = {
       enable = true;
-      userName = ${cfg.name};
-      userEmail = ${cfg.userSettings.email};
+      userName = cfg.name;
+      userEmail = cfg.userSettings.email;
       extraConfig = {
         init.defaultBranch = "main";
-        safe.directory = "/home/" + ${cfg.userSettings.username} + "/.dotfiles";
+        safe.directory = "/home/" + cfg.userSettings.username + "/.dotfiles";
       };
     };
 
