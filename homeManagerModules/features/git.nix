@@ -7,7 +7,7 @@
   cfg = config.myNixOS;
 in {
 
-  options.git = {
+  options.myNixOS.git = {
       enable = lib.mkEnableOption "Configuracao do Git Config";
       
       username = lib.mkOption {
