@@ -5,40 +5,37 @@
   myLib,
   ... 
 }: let
-  cfg = config.myNixOS;
+  cfg = config.git-user;
 in {
 
-  options = {
-    myNixOS = {
-      enable = lib.mkEnableOption "My NixOS";
-      userSettings = {
-        enable = lib.mkEnableOption "User settings";
-        username = lib.mkOption {
-          default = "";
-          description = "The username of the user";
-        };
-        name = lib.mkOption {
-          default = "";
-          description = "The name of the user";
-        };
-        email = lib.mkOption {
-          default = "";
-        };
+  options.git = {
+      enable = lib.mkEnableOption "Configuracao do Git Config";
+      
+      username = lib.mkOption {
+        default = "";
+        description = "Username do Git";
       };
-    }; 
-  };
+      name = lib.mkOption {
+        default = "";
+        description = "Nome do Usuario do git";
+      };
+      email = lib.mkOption {
+        default = "";
+        description = "Email para acesso ao git";
+      };
+  }; 
 
-  config = {
+  config = lib.mkIf cfg.enable {
 
     home.packages = [ pkgs.git ];
 
     programs.git = {
       enable = true;
-      userName = cfg.name;
-      userEmail = cfg.userSettings.email;
+      userName = ${cfg.username};
+      userEmail = ${cfg..email};
       extraConfig = {
         init.defaultBranch = "main";
-        safe.directory = "/home/" + cfg.userSettings.username + "/.dotfiles";
+        safe.directory = "/home/" + ${cfg.username} + "/.dotfiles";
       };
     };
 
