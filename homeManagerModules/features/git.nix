@@ -10,20 +10,20 @@ in {
 
   options = {
     myNixOS = {
-      enable = mkEnableOption "My NixOS";
+      enable = lib.mkEnableOption "My NixOS";
       userSettings = {
-        enable = mkEnableOption "User settings";
-        username = mkOption {
+        enable = lib.mkEnableOption "User settings";
+        username = lib.mkOption {
           type = types.str;
           default = "";
           description = "The username of the user";
         };
-        name = mkOption {
+        name = lib.mkOption {
           type = types.str;
           default = "";
           description = "The name of the user";
         };
-        email = mkOption {
+        email = lib.mkOption {
           type = types.str;
           default = "";
         };
@@ -37,11 +37,11 @@ in {
 
     programs.git = {
       enable = true;
-      userName = config.userSettings.name;
-      userEmail = config.userSettings.email;
+      userName = ${cfg.name};
+      userEmail = ${cfg.userSettings.email};
       extraConfig = {
         init.defaultBranch = "main";
-        safe.directory = "/home/" + config.userSettings.username + "/.dotfiles";
+        safe.directory = "/home/" + ${cfg.userSettings.username} + "/.dotfiles";
       };
     };
 
