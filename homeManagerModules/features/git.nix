@@ -9,7 +9,7 @@
     userEmail = config.userSettings.email;
     extraConfig = {
       init.defaultBranch = "main";
-      safe.directory = "/home/" + userSettings.username + "/.dotfiles";
+      safe.directory = "/home/" + config.userSettings.username + "/.dotfiles";
     };
   };
 
