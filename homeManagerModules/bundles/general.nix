@@ -21,9 +21,9 @@
     taskfile.enable = lib.mkDefault true;
     git = {
       enable = lib.mkDefault true;
-      userName = "ins";
+      username = "ins";
       name = "Moreira";
-      userEmail = "moreira@zaia.com.br";
+      email = "moreira@zaia.com.br";
     };
   };
 
