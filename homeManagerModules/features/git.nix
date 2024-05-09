@@ -5,8 +5,8 @@
 
   programs.git = {
     enable = true;
-    userName = userSettings.name;
-    userEmail = userSettings.email;
+    userName = config.userSettings.name;
+    userEmail = config.userSettings.email;
     extraConfig = {
       init.defaultBranch = "main";
       safe.directory = "/home/" + userSettings.username + "/.dotfiles";
